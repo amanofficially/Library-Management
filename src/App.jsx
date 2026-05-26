@@ -1,29 +1,20 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Students from './pages/Students'
+import Books from './pages/Books'
+import IssueBooks from './pages/IssueBooks'
 
-import Home from "./pages/Home";
-import Students from "./pages/Students";
-import Books from "./pages/Books";
-import IssueBooks from "./pages/IssueBooks";
+const App = () => (
+  <Layout>
+    <Routes>
+      <Route path="/"            element={<Home />} />
+      <Route path="/students"    element={<Students />} />
+      <Route path="/books"       element={<Books />} />
+      <Route path="/issue-books" element={<IssueBooks />} />
+    </Routes>
+  </Layout>
+)
 
-const App = () => {
-  return (
-    <>
-      <Routes>
-        {/* Home Page */}
-        <Route path="/" element={<Home />} />
-
-        {/* Students Page */}
-        <Route path="/students" element={<Students />} />
-
-        {/* Books Page */}
-        <Route path="/books" element={<Books />} />
-
-        {/* Issue Books Page */}
-        <Route path="/issue-books" element={<IssueBooks />} />
-      </Routes>
-    </>
-  );
-};
-
-export default App;
+export default App

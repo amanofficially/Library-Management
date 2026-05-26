@@ -1,1 +1,81 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-ink-50 text-ink-800 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 { @apply font-display; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold-500 text-white font-medium text-sm
+           hover:bg-gold-600 active:scale-95 transition-all duration-150 shadow-sm;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-ink-200 text-ink-700
+           font-medium text-sm hover:bg-ink-50 active:scale-95 transition-all duration-150;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-50 border border-red-200 text-red-700
+           font-medium text-sm hover:bg-red-100 active:scale-95 transition-all duration-150;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-ink-600
+           font-medium text-sm hover:bg-ink-100 active:scale-95 transition-all duration-150;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-ink-200 bg-white text-ink-800 text-sm
+           placeholder:text-ink-300 outline-none transition-all duration-200
+           focus:border-gold-400 focus:ring-2 focus:ring-gold-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-ink-100 shadow-card;
+  }
+
+  .page-header {
+    @apply mb-8 animate-fade-in;
+  }
+
+  .stat-card {
+    @apply card p-5 flex items-start gap-4 hover:shadow-card-hover transition-shadow duration-200;
+  }
+
+  .table-header {
+    @apply bg-ink-800 text-white text-xs font-medium uppercase tracking-wider;
+  }
+
+  .table-row {
+    @apply border-b border-ink-100 hover:bg-gold-50 transition-colors duration-150;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-green  { @apply badge bg-emerald-100 text-emerald-700; }
+  .badge-red    { @apply badge bg-red-100 text-red-700; }
+  .badge-gold   { @apply badge bg-gold-100 text-gold-700; }
+  .badge-ink    { @apply badge bg-ink-100 text-ink-600; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-ink-200 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-ink-300; }
+
+/* Animations delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
