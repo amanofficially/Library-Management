@@ -99,7 +99,7 @@ const Home = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Hero banner */}
       <div className="relative overflow-hidden rounded-3xl bg-ink-900 text-white mb-10 animate-fade-in">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1400&q=80"
             alt=""
@@ -127,7 +127,7 @@ const Home = () => {
           <img
             src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&q=80"
             alt="Library books"
-            className="hidden md:block w-40 h-28 object-cover rounded-2xl border border-white/10 shadow-xl"
+            className="hidden md:block w-42 h-30 object-cover rounded-2xl border border-white/10 shadow-xl"
           />
         </div>
       </div>
